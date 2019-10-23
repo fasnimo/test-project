@@ -1,0 +1,14 @@
+<% if flash.has?(:err) %>
+    <h3 style="color: red;"><%= flash[:err] %></h3>
+<% end %>
+
+<% if @user %>
+    <h1>Welcome <%= @user.name %>. Here are all your posts</h1>
+<% else %>
+    <h2>Here are posts from all users</h2>
+<% end %>
+
+
+<% @posts.each do |post| %>
+    <h2><a href="/posts/<%= post.id %>"><%= post.title %></a></h2>
+<% end %>
