@@ -1,0 +1,7 @@
+<h2>Title: <%= @forum.title %></h2>
+<p>Body: <%= @forum.body %></p>
+<p><a href="/forums/<%= @forum.id %>/edit">Edit</a></p>
+<form method="POST" action="/forums/<%= @forum.id %>">
+<input type="hidden"  name="_method" value="delete" />
+<input type="submit" value="Delete" />
+</form>

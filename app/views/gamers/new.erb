@@ -1,17 +1,17 @@
 <h1> Sign up for a new Account</h1>
 
-<% if @user && @user.errors %>
-    <% @user.errors.full_messages.each do |msg| %>
+<% if @gamer && @gamer.errors %>
+    <% @gamer.errors.full_messages.each do |msg| %>
         <p style="color: red;"><%= msg %></p>
     <% end %>
 <% end %>
 
-<form method="POST" action="/users">
+<form method="POST" action="/gamers">
     <label for="name">Name: </label>
-    <input name="name" id="name" type="text" value="<%= @user ? @user.name : ""%> "/>
+    <input name="name" id="name" type="text" value="<%= @gamer ? @gamer.name : ""%> "/>
     <label for="email">Email: </label>
 
-    <input name="email" id="email" type="text" value="<%= @user ? @user.email : ""%> "/>
+    <input name="email" id="email" type="text" value="<%= @gamer ? @gamer.email : ""%> "/>
     <label for="password">Password: </label>
     <input name="password" id="password" type="password">
     <input type="submit">

@@ -1,0 +1,9 @@
+<h1> Edit a new Forum</h1>
+<form method="POST" action="/forums/<%= @forum.id %>">
+    <input type="hidden" id="hidden" name="_method" value="PATCH">
+    <label for="title">Title</label>
+    <input type="text" value= " <%= @forum.title %>" name="title">
+    <label for="body">Body</label>
+    <textarea   name="body" ><%= @forum.body %></textarea>
+    <input type="submit">
+</form>

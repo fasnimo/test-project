@@ -5,9 +5,9 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 use Rack::MethodOverride
-use PostsController
-use UsersController
+use ForumsController
+use GamersController
 use SessionsController
-use Rack::Flash
+# use Rack::Flash
 run ApplicationController
 

@@ -1,9 +1,9 @@
-class Posts < ActiveRecord::Migration
+class Forum < ActiveRecord::Migration
   def change
-    create_table :posts do |t|
+    create_table :forums do |t|
       t.string :title
       t.text :body
-      t.integer :user_id
+      t.integer :gamer_id
       
       t.timestamps
     end

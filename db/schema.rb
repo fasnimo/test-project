@@ -11,17 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191023202938) do
+ActiveRecord::Schema.define(version: 20191025193356) do
 
-  create_table "posts", force: :cascade do |t|
+  create_table "forums", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
-    t.integer  "user_id"
+    t.integer  "gamer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "gamers", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"

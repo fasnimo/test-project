@@ -1,13 +1,13 @@
-<% if @p && @p.errors %>
-    <% @p.errors.full_messages.each do |msg| %>
+<% if @g && @g.errors %>
+    <% @g.errors.full_messages.each do |msg| %>
         <p style="color: red;"><%= msg %></p>
     <% end %>
 <% end %>
 
-<h1> Create a new Post</h1>
-<form method="POST" action="/posts">
+<h1> Create a new Community</h1>
+<form method="POST" action="/forums">
     <label for="title">Title</label>
-    <input type="text" name="title" value="<%= @p ? @p.title : ""%> ">
+    <input type="text" name="title" value="<%= @g ? @g.title : ""%> ">
     <label for="body">Body</label>
     <textarea  name="body" ><%= @p ? @p.body : ""%></textarea>
     <input type="submit">

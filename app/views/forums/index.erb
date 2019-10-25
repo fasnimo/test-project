@@ -1,0 +1,13 @@
+<% if @gamer %>
+    <h1>Welcome <%= @gamer.name %>. Here are all your recent forums!</h1>
+<% else %>
+    <h2>Here is a forum from all relative games</h2>
+<% end %>
+
+
+<% @forums.each do |forum| %>
+    <h2><a href="/forums/<%= forum.id %>"><%= forum.title %></a></h2>
+<% end %>
+
+<a href="/forums/new">Please Contribute!</a>
+
