@@ -84,10 +84,10 @@ class ForumsController < ApplicationController
     delete '/forums/:id' do
         forum_gamer = Forum.find_by_id(params[:id]).gamer
         if forum_gamer.id == current_gamer.id
-            .destroy(params[:id])
+            Forum.destroy(params[:id])
             redirect :'/forums'
         else
-            redirect :'/forums'
+            redirect :'/welcome'
         end
     end
 

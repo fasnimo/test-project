@@ -1,7 +1,7 @@
 <% if @gamer %>
-    <h1>Welcome <%= @gamer.name %>. Here are all your recent forums!</h1>
+    <h1>Welcome <%= @gamer.name %>. Create a new forum!</h1>
 <% else %>
-    <h2>Here is a forum from all relative games</h2>
+    <h2>Here are some forums about your relative game searchs!</h2>
 <% end %>
 
 
@@ -9,5 +9,6 @@
     <h2><a href="/forums/<%= forum.id %>"><%= forum.title %></a></h2>
 <% end %>
 
-<a href="/forums/new">Please Contribute!</a>
+
+
 

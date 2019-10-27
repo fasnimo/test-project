@@ -8,6 +8,6 @@ use Rack::MethodOverride
 use ForumsController
 use GamersController
 use SessionsController
-# use Rack::Flash
+
 run ApplicationController
 

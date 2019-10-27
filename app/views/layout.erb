@@ -15,8 +15,20 @@
   </head>
   <body>
     <div class="wrapper">
-
-        <%= yield %>
+      <nav>
+       <ul>
+        <% if logged_in? %>
+          <li><a href="/forums/all">All Gamer Talk</a></li>
+          <li><a href="/forums">My Forums</a></li>
+          <li><a href="/forums/new">Join & Create a Forum!</a></li>
+          <li><a href="/logout">Logout</a></li>
+        <% else %>
+          <li><a href="/login">Sign In</a></li>
+          <li><a href="/signup">Sign Up</a></li>
+        <% end %>
+      </ul>
+        </nav>
+    <%= yield %>
 
       <footer class="branding">
         <small>&copy; 2019 <strong>TestProject</strong></small>
