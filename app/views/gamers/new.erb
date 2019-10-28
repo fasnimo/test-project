@@ -1,6 +1,6 @@
 <h1> Sign up for a new Account</h1>
 
-<form method="POST" action="/gamers">
+<form method="POST" action="/signup">
     <label for="name">Name: </label>
     <input name="name" id="name" type="text" value="<%= @gamer ? @gamer.name : ""%> "/>
     <label for="email">Email: </label>
@@ -8,5 +8,5 @@
     <input name="email" id="email" type="text" value="<%= @gamer ? @gamer.email : ""%> "/>
     <label for="password">Password: </label>
     <input name="password" id="password" type="password">
-    <input type="submit">
+    <input type="submit" value="Submit">
 </form>
