@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
 
     post '/sessions' do
         gamer = Gamer.find_by(email: params[:email])
-
         if gamer && gamer.authenticate(params[:password])
             session[:gamer_id] = gamer.id
             redirect '/forums'
@@ -16,7 +15,7 @@ class SessionsController < ApplicationController
     end
 
     get '/logout' do
-        session.destroy
-        redirect '/login'
+        session.clear
+        redirect '/'
     end
 end
