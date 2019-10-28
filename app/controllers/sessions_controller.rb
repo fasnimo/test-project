@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
 
     post '/sessions' do
         gamer = Gamer.find_by(email: params[:email])
+        puts gamer
         if gamer && gamer.authenticate(params[:password])
             session[:gamer_id] = gamer.id
             redirect '/forums'

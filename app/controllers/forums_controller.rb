@@ -31,8 +31,9 @@ class ForumsController < ApplicationController
     
     #edit
     get "/forums/:id/edit" do 
-        forum_gamer = Forum.find_by_id(params[:id]).gamer
-         if forum_gamer.id == current_gamer.id
+        # forum_gamer = Forum.find_by_id(params[:id]).gamer
+        #  if forum_gamer.id == current_gamer.id
+        if is_authorized?
             @forum = Forum.find_by_id(params[:id])
             erb :'forums/edit'
         else 
@@ -42,8 +43,7 @@ class ForumsController < ApplicationController
     
     #update
     patch "/forums/:id" do 
-        forum_gamer = Forum.find_by_id(params[:id]).gamer
-        if forum_gamer.id == current_gamer.id
+        if is_authorized?
             @forum = Forum.find_by_id(params[:id])
             params.delete("_method")
             if @forum.update(params)
@@ -80,8 +80,7 @@ class ForumsController < ApplicationController
 
     #delete
     delete '/forums/:id' do
-        forum_gamer = Forum.find_by_id(params[:id]).gamer
-        if forum_gamer.id == current_gamer.id
+        if is_authorized?
             Forum.destroy(params[:id])
             redirect :'/forums'
         else
