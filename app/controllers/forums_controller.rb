@@ -36,7 +36,6 @@ class ForumsController < ApplicationController
             @forum = Forum.find_by_id(params[:id])
             erb :'forums/edit'
         else 
-            # flash[:err] = "You aren't authorized to modify the selected post."
             redirect "/forums"
         end
     end
@@ -53,7 +52,6 @@ class ForumsController < ApplicationController
                 redirect "/forums/#{@forum.id}/edit"
             end
         else
-            # flash[:err] = "You aren't authorized to modify the selected post."
             erb :"/forums/index"
         end
     end

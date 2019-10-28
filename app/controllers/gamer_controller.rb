@@ -13,6 +13,5 @@ class GamersController < ApplicationController
         else
             erb  :"/gamers/new"
         end
-
     end
 end
