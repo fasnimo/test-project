@@ -3,4 +3,11 @@ class Forum < ActiveRecord::Base
     validates :title, :body, presence: true
     validates :title, length: { minimum: 4 }
 
+    # <% flash.keys.each do |type| %>
+    #     <div data-alert class="flash <%= type %> alert-box radius">
+    #       <%= flash[type] %>
+    #       <a href="#" class="close">&times;</a>
+    #     </div>
+    # <% end %>
+
 end

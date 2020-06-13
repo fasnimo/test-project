@@ -2,6 +2,7 @@ class ForumsController < ApplicationController
    
     #index
     get '/forums' do 
+        # flash[:notice] = "Hooray we are here!" #comeback to this.
         if logged_in?
             @gamer = current_gamer
             @forums = current_gamer.forums
@@ -31,8 +32,7 @@ class ForumsController < ApplicationController
     
     #edit
     get "/forums/:id/edit" do 
-        # forum_gamer = Forum.find_by_id(params[:id]).gamer
-        #  if forum_gamer.id == current_gamer.id
+
         if is_authorized?
             @forum = Forum.find_by_id(params[:id])
             erb :'forums/edit'
